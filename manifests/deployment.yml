@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: apraneethafrontend 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apraneethafrontend
+  template:
+    metadata:
+      labels:
+        app: apraneethafrontend 
+    spec:
+      containers:
+        - name: apraneethafrontend 
+          image: registt.azurecr.io/apraneethafrontend
+          ports:
+          - containerPort: 4200
